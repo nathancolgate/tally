@@ -1,0 +1,27 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>tally! &raquo; <%= page_title(true) %></title>
+    <%= stylesheet_link_tag 'scaffold' %>
+    <%= javascript_include_tag 'prototype', 'tally' %>
+  </head>
+  <body>
+    <%=render_partial "login/form" %>
+
+    <div id="header">
+      <h1><%= link_to 'tally', '/', :id => 'logo' %><%= page_title %></h1>
+    </div>
+
+    <%= render_flash %>
+
+    <div id="container" class="c">
+      <%= @content_for_layout %>
+    </div>
+    
+    <div id="footer">
+      <p>This is a <a href="http://railsday.com">RailsDay</a> production, brought to you by <a href="http://piece.dpiddy.net/">danp</a>, <a href="http://techno-weenie.net">technoweenie</a>, and caseygollan.</p>
+    </div>
+  </body>
+</html>

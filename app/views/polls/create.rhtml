@@ -1,0 +1,8 @@
+<% @title = 'Create a new poll' -%>
+
+<%= create_poll_form_tag %>
+  <%= render_partial "form" %>
+  <%= submit_tag "Create" %>
+<%= end_form_tag %>
+
+<p><%= link_to_polls 'Back' %></p>

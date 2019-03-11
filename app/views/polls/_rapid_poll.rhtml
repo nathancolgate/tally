@@ -1,0 +1,12 @@
+<h3><%=rapid_poll.title %></h3>
+<ul>
+<% rapid_poll.choices.each do |choice| %>
+  <li class="add_link">
+  <% if loggedin? -%><%= link_to_remote('+', {:url => {:controller => 'reply', :action => 'rapid_create'},
+        :with => "'reply[poll_id]=#{@poll.id}&reply[choice_id]=#{choice.id}'",
+        :complete => 'Reply.rapid_create_complete(request)', :update => 'rf_left'}, 
+        {:class => 'add_link'}) %><% end -%>
+  <%= choice.body %>
+  </li>
+<% end %>
+</ul>

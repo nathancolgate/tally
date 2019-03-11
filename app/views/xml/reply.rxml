@@ -1,0 +1,22 @@
+xml.instruct! :xml, :version => "1.0", :encoding => "UTF-8"
+xml.feed "version" => "0.3", "xml:lang"=>"en-US", "xmlns"=>"http://purl.org/atom/ns#", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+  xml.title @feed[:title]
+  xml.tagline "mode" => "escape", "type" => "text/html"
+  xml.id "tag:#{@request.host},2005:tally!:#{@feed[:id]}"
+  xml.generator "tally!", "url" => "http://www.tallyit.net"
+  xml.link "rel" => "alternate", "type" => "text/html", "href" => @feed[:url]
+  xml.modified @replies.first.updated_at.xmlschema unless @replies.empty?
+  
+  for reply in @replies
+    xml.entry do
+      xml.author { xml.name reply.user_login }
+      xml.id "tag:#{@request.host},2005,tally!:#{@feed[:id]}-#{reply.id}"
+      
+      xml.issued reply.created_at.xmlschema
+      xml.modified reply.updated_at.xmlschema
+      xml.title "#{reply.user_login} chose #{reply.choice_body}"
+      
+      xml.link "rel" => "alternate", "type" => "text/html", "href" => url_for(:controller => "polls", :action => "show", :id => reply.poll_id)
+    end
+  end
+end

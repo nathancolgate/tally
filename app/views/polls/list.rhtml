@@ -1,0 +1,32 @@
+<% @title = 'Recent Polls' -%>
+
+<div id="main">
+<%=render_partial "polls/list", @polls %>
+
+<p><%= paging_links @poll_pages, "Previous page", "Next page" %></p>
+
+<% if loggedin? -%>
+<p><%= link_to_polls 'New poll', :action => 'create' %></p>
+<% end -%>
+</div>
+
+<div id="side">
+<h3>Rapid Fire!</h3>
+<p>Take polls in <%= link_to 'rapid fire mode', :controller => 'polls', :action => 'rapid' %></p>
+
+<% if @tags and @tags.length > 0 -%>
+<h3>Tags</h3>
+<p><%= link_to_tags(@tags.uniq) %></p>
+<% end -%>
+
+<h3>Subscribe</h3>
+<p>
+  <%= Poll.count %> polls are being taken by
+  <%= User.count %> users.  
+  <%= reply_count = Reply.count %> replies have been posted so far<% if reply_count > 0 -%>, with 
+  <%= link_to_poll Poll.find(:first, :order => 'replied_on_at DESC'), :text => 'the last one' %>
+  <%= time_ago_in_words Reply.find_recent(:limit => 1).first.updated_at %> ago..<% end -%>.
+</p>
+
+<p><%=link_to_all_polls_feed :text => "Subscribe" %> to the latest updated polls in your news reader.</p>
+</div>

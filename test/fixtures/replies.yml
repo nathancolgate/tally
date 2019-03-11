@@ -1,0 +1,25 @@
+rick_likes_episode_2:
+  id: 1
+  poll_id: 1
+  user_id: 1
+  choice_id: 2
+  created_at: <%= 3.hours.ago.to_formatted_s :db %>
+  updated_at: <%= 3.hours.ago.to_formatted_s :db %>
+
+casey_likes_episode_5:
+  id: 2
+  poll_id: 1
+  user_id: 2
+  choice_id: 5
+  created_at: <%= 15.minutes.ago.to_formatted_s :db %>
+  updated_at: <%= 15.minutes.ago.to_formatted_s :db %>
+
+dan_likes_monster:
+  id: 3
+  poll_id: 2
+  user_id: 3
+  choice_id: 8
+  created_at: <%= 13.minutes.ago.to_formatted_s :db %>
+  updated_at: <%= 13.minutes.ago.to_formatted_s :db %>
+
+

@@ -1,0 +1,10 @@
+<% @title = "rapid fire!" -%>
+
+<% if @poll %>
+<div id="rf_right">
+  <%=render_partial "rapid_poll", @poll %>
+</div>
+<div id="rf_left"></div>
+<% else %>
+There are no polls you haven't replied to.
+<% end %>

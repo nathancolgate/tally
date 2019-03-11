@@ -1,0 +1,229 @@
+#header, #login, #flash, #container, #footer {
+  text-align:left;
+  margin:0 auto;
+}
+
+#header {
+  border-bottom:solid 5px #000;
+}
+
+#footer {
+  border-top:solid 2px #000;
+}
+
+#flash {
+  margin:20px auto;
+  width:50%;
+}
+
+#header h1 {
+  min-height:50px;
+  line-height:30px;
+  padding-left:192px;
+  position:relative;
+}
+
+#header h1 #logo {
+  text-indent:-9000px;
+  height:50px;
+  width:192px;
+  position:absolute;
+  top:0; left:0;
+  background:url(/images/tallylogo.png) no-repeat center left;
+}
+
+#main {
+  width:69%;
+  padding-right:2%;
+  margin-right:-29%;
+  float:left;
+}
+
+#side {
+  width:29%;
+  float:right;
+}
+
+#rf_left,
+#col1 {
+  width:49%;
+  padding-right:2%;
+  margin-right:-29%;
+  float:left;
+}
+
+#rf_right,
+#col2 {
+  width:49%;
+  float:right;
+}
+
+body { 
+  background-color: #fff; color: #333; 
+  padding:0 5%;
+  text-align:center;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+fieldset {
+  border-width:0;
+  margin-bottom:20px;
+}
+
+legend {
+  font-size:14px;
+  font-weight:bold;
+  border-bottom:solid 1px #360;
+  padding:0 40px 5px 0;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+img { border-width:0; }
+
+a { color: #360; }
+a:visited { color: #360; }
+a:hover { color: #333; background-color:#cfa; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#ErrorExplanation {
+  width: 400px;
+  border: 2px solid #red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#ErrorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#ErrorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#ErrorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+ul {
+  list-style-type:none;
+  margin:-10px 0 0 0; padding:0;
+}
+
+ul.edit li {
+  padding:5px;
+  margin:0 -5px
+}
+
+li {
+  padding:10px;
+  margin:0 -10px
+}
+
+li.mine {
+  background-color:#ffd;
+}
+
+.time {
+  color:#777;
+  font-style:italic;
+}
+
+ul li span.time {
+  margin:0; padding:0 0 0 50px;
+  display:block;
+}
+
+#flash.notice, #flash.error {
+  padding:5px 5px 5px 50px;  
+  min-height:32px;
+}
+
+ul.edit li.remove_link, li.add_link {
+  line-height:16px;
+  position:relative;
+  padding-left:35px;
+}
+
+ul.edit li.remove_link {
+  padding-left:30px;
+}
+
+a.remove_link, a.add_link {
+  height:16px;
+  width:16px;
+  text-indent:-9000px;
+  position:absolute;
+  top:10px; left:10px;
+}
+
+a.remove_link {
+  top:5px; left:5px;
+}
+
+a.remove_link {
+  background: url("http://techno-weenie.net/files/stockholm_icons/16x16/close.gif") center left no-repeat;
+}
+
+a.add_link {
+  background: url("http://techno-weenie.net/files/stockholm_icons/16x16/add.gif") center left no-repeat;
+}
+
+#flash.notice {
+  background: url("http://techno-weenie.net/files/stockholm_icons/32x32/info_32.gif") center left no-repeat;
+}
+
+#flash.error {
+  background: url("http://techno-weenie.net/files/stockholm_icons/32x32/alert_32.gif") center left no-repeat;
+}
+
+#login {
+  text-align:right;
+}
+
+#login, #login input {
+  font-size:10px;
+}
+
+#loginformtable {background-color:#f4f4f4; border:1px solid ccc;}
+input[type=text], input[type=password]{font-size:15px;}
+
+.c:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.c {display: inline-table;}
+
+/* Hides from IE-mac \*/
+* html .c {height: 1%;}
+.c {display: block;}
+/* End hide from IE-mac */

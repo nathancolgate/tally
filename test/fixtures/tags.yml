@@ -1,0 +1,12 @@
+movies:
+  id: 1
+  tag: movies
+food:
+  id: 2
+  tag: food
+drinks:
+  id: 3
+  tag: drinks
+culture:
+  id: 4
+  tag: culture

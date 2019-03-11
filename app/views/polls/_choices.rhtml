@@ -1,0 +1,8 @@
+<ul id="choices">
+<% poll.choices.each do |choice| -%>
+<li class="add_link">
+  <% if loggedin? -%><%= reply_to_poll_remote_link @poll, choice %><% end -%>
+  <%= choice.body %>
+</li>
+<% end -%>
+</ul>

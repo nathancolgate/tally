@@ -1,0 +1,27 @@
+xml.instruct! :xml, :version => "1.0", :encoding => "UTF-8"
+xml.feed "version" => "0.3", "xml:lang"=>"en-US", "xmlns"=>"http://purl.org/atom/ns#", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+  xml.title @feed[:title]
+  xml.tagline "mode" => "escape", "type" => "text/html"
+  xml.id "tag:#{@request.host},2005:tally!:#{@feed[:id]}"
+  xml.generator "tally!", "url" => "http://www.tallyit.net"
+  xml.link "rel" => "alternate", "type" => "text/html", "href" => @feed[:url]
+  xml.modified @polls.first.updated_at.xmlschema unless @polls.empty?
+  
+  for poll in @polls
+    xml.entry do
+      xml.author { xml.name poll.author_login }
+      xml.id "tag:#{@request.host},2005,tally!:#{@feed[:id]}-#{poll.id}"
+      
+      xml.issued poll.created_at.xmlschema
+      xml.modified poll.updated_at.xmlschema
+      xml.title poll.title
+      
+      xml.link "rel" => "alternate", "type" => "text/html", "href" => url_for(:controller => "polls", :action => "show", :id => poll.id)
+      for tag in poll.tags
+        xml.dc :subject, tag.tag
+      end
+      
+      xml.content CGI.escapeHTML(poll.body), "type" => "text/html", "mode" => "escaped"
+    end
+  end
+end

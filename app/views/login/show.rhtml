@@ -1,0 +1,40 @@
+<% @title = "#{@user.login}'s tally progress" -%>
+
+<div id="col1">
+<h2>created polls</h2>
+<% if @user.polls.count > 0 -%>
+<ul>
+<% @user.polls.each do |poll| -%>
+  <li>
+    <%= link_to_poll poll %>
+    <span class="time">replied to <%= time_ago_in_words poll.replied_on_at %> ago</span>
+  </li>
+<% end -%>
+</ul>
+<% else -%>
+<p>
+  <%= link_to_user @user %> has created <em>no</em> polls.<% if @user == @session[:user] -%>
+  <%= link_to_polls 'Create', :action => 'create' %> one now!<% end -%>
+</p>
+<% end -%>
+</div>
+
+<div id="col2">
+<h2>recent replies</h2>
+<% if @user.replies.count > 0 -%>
+<ul class="replies">
+<% Reply.find_by_user(@user).each do |reply| -%>
+  <li>
+    picked "<%= reply.choice_body %>" on 
+    <%= link_to reply.poll_title, :controller => 'polls', :action => 'show', :id => reply.poll_id %>
+    <span class="time"><%= time_ago_in_words reply.created_at %> ago</span>
+  </li>
+<% end -%>
+</ul>
+<% else -%>
+<p>
+  <%= link_to_user @user %> has replied to <em>no</em> polls.<% if @user == @session[:user] -%>
+  Get started with <%= link_to 'rapid fire polling', :controller => 'polls', :action => 'rapid' %>!<% end -%>
+</p>
+<% end -%>
+</div>

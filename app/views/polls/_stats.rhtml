@@ -1,0 +1,16 @@
+<% my_reply = nil -%> 
+<% replies = capture do -%>
+<h3>Replies to this poll</h3>
+<ul class="replies">
+<% Reply.find_by_poll(poll).each do |reply| -%>
+<% my_reply = reply if (loggedin? and reply.user_id == @session[:user].id) -%>
+  <li<%= (my_reply and reply.id == my_reply.id) ? ' class="mine"' : ''%>>
+    <%= link_to reply.user_login, :controller => 'login', :action => 'show', :login => reply.user_login %> 
+    picked "<%= reply.choice_body %>"
+    <span class="time"><%= time_ago_in_words reply.created_at %> ago</span>
+  </li>
+<% end -%>
+</ul>
+<% end -%>
+<%= render_partial 'polls/replied', :poll => poll, :reply => my_reply %>
+<%= replies %>

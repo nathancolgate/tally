@@ -1,0 +1,7 @@
+<% @tags = (@tags ||= []) + list_item.tags -%>
+<li>
+  <%= link_to_poll list_item %>
+  <% if list_item.replied_on_at -%>
+  <span class="time">replied to <%= time_ago_in_words list_item.replied_on_at %> ago</span>
+  <% end -%>
+</li>

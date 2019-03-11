@@ -1,0 +1,8 @@
+<h3><%=rapid_results.title %></h3>
+<ul>
+<% stats = Choice.stats_by_poll(rapid_results)
+   total_stats = stats.inject(0) { |total, stat| total + stat.total } -%> 
+<% stats.each do |choice| %>
+  <li><%= choice.body %> (<%=choice.total%> out of <%=total_stats%>)</li>
+<% end %>
+</ul>

@@ -1,0 +1,40 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+rick:
+  id: 1
+  login: rick
+  type: Admin
+  password: d310d5ef9250863d11d295e82e872739bb8950ac # test
+  email: rick@tallyit.net
+
+casey:
+  id: 2
+  login: casey
+  type: Admin
+  password: d310d5ef9250863d11d295e82e872739bb8950ac # test
+  email: casey@tallyit.net
+
+dan:
+  id: 3
+  login: dan
+  type: Visitor
+  password: d310d5ef9250863d11d295e82e872739bb8950ac # test
+  email: dan@tallyit.net
+
+bob:
+  id: 1000001
+  login: bob
+  type: Visitor
+  password: 9a91e1d8d95b6315991a88121bb0aa9f03ba0dfc # test (using UserTest salt)
+  
+existingbob:
+  id: 1000002
+  login: existingbob
+  type: Visitor
+  password: 9a91e1d8d95b6315991a88121bb0aa9f03ba0dfc # test (using UserTest salt)
+  
+longbob:
+  id: 1000003
+  login: longbob
+  type: User
+  password: 8e9b1a9a38e66ca572a5e8fdac8e256848842dfa # longtest (using UserTest salt)

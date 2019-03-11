@@ -1,0 +1,13 @@
+<% @title = "Polls in #{link_to_tags(@params[:tags], ', ', false)}" -%>
+<div id="main">
+<% @tags = [] -%>
+<%=render_partial "polls/list", @polls %>
+</div>
+
+<div id="side">
+  <h3>Tags</h3>
+  <p><%= link_to_tags(@tags.uniq) %></p>
+  
+  <h3>Subscribe</h3>
+  <p><%=link_to_tag_polls_feed @params[:tags], :text => "Subscribe" %> to the polls in <%= @params[:tags].join(', ') %> in your news reader.</p>
+</div>

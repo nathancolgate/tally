@@ -1,0 +1,11 @@
+<% reply = Reply.find(:first, :conditions => ['poll_id = ? AND user_id = ?', poll.id, @session[:user].id]) unless 
+  defined?(reply) and reply -%>
+<ul id="stats">
+<% stats = Choice.stats_by_poll(poll) 
+   total_stats = stats.inject(0) { |total, stat| total + stat.total } -%> 
+<% Choice.stats_by_poll(poll).each do |stat| -%>
+  <li<%= (reply and stat.id == reply.choice_id) ? ' class="mine"' : '' %>>
+    <%= stat.body %> (<%=stat.total%> out of <%= total_stats %>)
+  </li>
+<% end -%>
+</ul>

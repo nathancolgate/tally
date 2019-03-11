@@ -1,0 +1,7 @@
+@rick_befriends_casey:
+  user_id: 1
+  friend_id: 2
+
+@dan_befriends_rick:
+  user_id: 3
+  friend_id: 1

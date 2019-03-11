@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+starwars:
+  id: 1
+  author_id: 3
+  title: What is your favorite star wars movie?
+  body: blah blah blah star wars
+  created_at: <%= 6.hours.ago.to_formatted_s :db %>
+  updated_at: <%= 6.hours.ago.to_formatted_s :db %>
+  replied_on_at: <%= 15.minutes.ago.to_formatted_s :db %>
+caffeine:
+  id: 2
+  author_id: 2
+  title: Caffeine Drink?
+  body: OMG!  Pick your caffeine drink!
+  created_at: <%= 7.hours.ago.to_formatted_s :db %>
+  updated_at: <%= 7.hours.ago.to_formatted_s :db %>
+  replied_on_at: <%= 13.minutes.ago.to_formatted_s :db %>

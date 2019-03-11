@@ -1,0 +1,15 @@
+@starwars_movies:
+  poll_id: 1
+  tag_id: 1
+@starwars_culture:
+  poll_id: 1
+  tag_id: 4
+@caffeine_food:
+  poll_id: 2
+  tag_id: 2
+@caffeine_drinks:
+  poll_id: 2
+  tag_id: 3
+@caffeine_culture:
+  poll_id: 2
+  tag_id: 4

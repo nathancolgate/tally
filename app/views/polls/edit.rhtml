@@ -1,0 +1,38 @@
+<% @title = "Editing '#{@poll.title}'" -%>
+
+<div id="main">
+<%= edit_poll_form_tag @poll %>
+  <%= render_partial "form" %>
+  <%= submit_tag "Edit" %>
+<%= end_form_tag %>
+
+<p>
+  <%= link_to_poll @poll, :text => 'Show' %> |
+  <%= link_to_polls 'Back' %>
+</p>
+</div>
+
+<div id="side">
+<fieldset>
+  <legend>Choices</legend>
+  <ul class="edit" id="choices">
+  <%= render_partial_collection 'choices/choice', @poll.choices %>
+  </ul>
+  
+  <%= choice_form_remote_tag -%>
+  <%= render_partial 'choices/form' %>
+  <%= submit_tag 'Add' %>
+  <%= end_form_tag -%>
+</fieldset>
+
+<fieldset>
+<legend>Tags</legend>
+  <ul class="edit" id="tags">
+  <%= render_partial_collection 'tags/tag', @poll.tags, nil, { :poll => @poll } %>
+  </ul>
+  
+  <%= tags_form_remote_tag :poll_id => @poll.id %>
+  <%= render_partial "tags/form" %>
+  <%= submit_tag "Add" %>
+  <%= end_form_tag -%>
+</div>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<% 1.upto(6) do |i| %>
+sw_<%=i%>:
+  id: <%=i%>
+  poll_id: 1
+  position: <%=i%>
+  body: Episode <%=i%>
+<% end %>
+cf_1:
+  id: 7
+  poll_id: 2
+  position: 1
+  body: Red Bull
+cf_2:
+  id: 8
+  poll_id: 2
+  position: 2
+  body: Monster
+cf_3:
+  id: 9
+  poll_id: 2
+  position: 3
+  body: Rockstar
